@@ -1,0 +1,50 @@
+import React from "react";
+import { ShieldAlert, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+const AdminCustomerConflictModal = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
+  if (!isOpen) return null;
+
+  const handleAdminPanelRedirect = () => {
+    onClose();
+    navigate("/admin-panel");
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+      <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all pointer-events-auto">
+        <div className="flex justify-center mb-4">
+          <ShieldAlert className="w-16 h-16 text-orange-500" />
+        </div>
+
+        <h2 className="text-xl font-bold text-center mb-3 text-[#1F3B6D]">
+          Access Restricted
+        </h2>
+
+        <p className="text-center text-gray-600 mb-6">
+          You are currently logged in as an administrator. Access to customer pages is restricted.
+        </p>
+
+        <div className="flex flex-col space-y-3">
+          <button
+            onClick={handleAdminPanelRedirect}
+            className="w-full py-3 rounded-lg text-lg font-bold text-white bg-[#1F3B6D] hover:bg-[#162A52] transition-colors duration-300 flex items-center justify-center"
+          >
+            <ArrowRight className="w-5 h-5 mr-2" />
+            Go to Admin Panel
+          </button>
+          <button
+            onClick={onClose}
+            className="w-full py-3 rounded-lg text-lg font-bold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors"
+          >
+            Stay on Customer Page
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminCustomerConflictModal;
