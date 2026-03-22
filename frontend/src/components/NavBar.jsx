@@ -94,7 +94,7 @@ const NavBar = () => {
     currentLogout();
     setProfileOpen(false);
     setIsOpen(false);
-    navigate("/");
+    navigate("/login");
   };
 
   const isActive = (path) => {
