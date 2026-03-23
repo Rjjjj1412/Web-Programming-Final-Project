@@ -11,7 +11,11 @@ const ConfirmationModal = ({
   cancelText,
   iconType = "info", // 'info', 'warning', 'error'
 }) => {
-  if (!isOpen) return null;
+  if (!isOpen) {
+  return (
+    <div className="hidden" data-testid="confirmation-modal" />
+  );
+}
 
   const icons = {
     info: <ShoppingCart className="w-16 h-16 text-blue-500" />,
@@ -23,7 +27,7 @@ const ConfirmationModal = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
          data-testid="confirmation-modal"
       >
-      <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all pointer-events-auto">
+      <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm pointer-events-auto">
         <div className="flex justify-center mb-4">{icons[iconType]}</div>
 
         <h2 className="text-xl font-bold text-center mb-3 text-[#1F3B6D]"
