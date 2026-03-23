@@ -702,9 +702,11 @@ const BrowseBooksPage = () => {
       ) : (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {displayedProducts.map((product) => (
+                {displayedProducts.map((product, index) => (
                   <div
                     key={product._id}
+                    data-testid={`product-card-${product._id}`}
+                    data-index={index}
                     className="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                     onClick={() => handleProductClick(product._id)}
                   >
