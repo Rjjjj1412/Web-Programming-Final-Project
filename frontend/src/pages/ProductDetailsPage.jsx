@@ -191,7 +191,9 @@ const ProductDetailsPage = () => {
             />
           </div>
           <div>
-            <h1 className="text-4xl font-bold text-[#1F3B6D] mb-2">
+            <h1 className="text-4xl font-bold text-[#1F3B6D] mb-2"
+                data-testid={`product-title-${product._id}`}
+              >
               {product.product_name}
             </h1>
             <p className="text-xl text-[#757575] mb-4">
