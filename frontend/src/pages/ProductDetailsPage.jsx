@@ -118,7 +118,8 @@ const ProductDetailsPage = () => {
       title: "Add to Cart",
       message: "Proceed to add this item to your cart?",
       onConfirm: async () => {
-      await addToCart(product);
+        setConfirmationModal(prev => ({ ...prev, isOpen: false }));
+        await addToCart(product);
         navigate("/cart");
       },
       confirmText: "Proceed",
