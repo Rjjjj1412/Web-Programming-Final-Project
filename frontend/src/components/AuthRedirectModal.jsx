@@ -13,7 +13,9 @@ const AuthRedirectModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
+         data-testid="auth-modal"
+      >
       <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all pointer-events-auto">
         <div className="flex justify-center mb-4">
           <AlertTriangle className="w-16 h-16 text-yellow-500" />
@@ -29,6 +31,7 @@ const AuthRedirectModal = ({ isOpen, onClose }) => {
 
         <div className="flex flex-col space-y-3">
           <button
+            data-testid="go-login-btn"
             onClick={handleLoginRedirect}
             className="w-full py-3 rounded-lg text-lg font-bold text-white bg-[#1F3B6D] hover:bg-[#162A52] transition-colors duration-300 flex items-center justify-center"
           >
@@ -36,6 +39,7 @@ const AuthRedirectModal = ({ isOpen, onClose }) => {
             Go to Login
           </button>
           <button
+            data-testid="auth-cancel-btn"
             onClick={onClose}
             className="w-full py-3 rounded-lg text-lg font-bold bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors"
           >
