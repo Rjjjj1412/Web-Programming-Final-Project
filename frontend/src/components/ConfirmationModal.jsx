@@ -20,11 +20,15 @@ const ConfirmationModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
+         data-testid="confirmation-modal"
+      >
       <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm transform transition-all pointer-events-auto">
         <div className="flex justify-center mb-4">{icons[iconType]}</div>
 
-        <h2 className="text-xl font-bold text-center mb-3 text-[#1F3B6D]">
+        <h2 className="text-xl font-bold text-center mb-3 text-[#1F3B6D]"
+            data-testid="modal-title"
+          >
           {title}
         </h2>
 
@@ -33,6 +37,7 @@ const ConfirmationModal = ({
         <div className="flex flex-col space-y-3">
           {onConfirm && (
             <button
+              data-testid="confirm-btn"
               onClick={onConfirm}
               className="w-full py-3 rounded-lg text-lg font-bold text-white transition-colors duration-300 hover:bg-opacity-90 bg-[#4A90E2]"
             >
@@ -40,6 +45,7 @@ const ConfirmationModal = ({
             </button>
           )}
           <button
+            data-testid="cancel-btn"
             onClick={onClose}
             className="w-full py-3 rounded-lg text-lg font-bold text-gray-500 hover:bg-gray-100 transition-colors"
           >
