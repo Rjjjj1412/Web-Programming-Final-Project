@@ -686,11 +686,20 @@ const BrowseBooksPage = () => {
             </div>
           </div>
 
-          {loading ? (
-            <div className="flex justify-center items-center mt-12">
-              <Loader className="animate-spin w-8 h-8 text-[#0F1E3D]" />
-            </div>
-          ) : (
+      {loading ? (
+        <div className="flex justify-center items-center mt-12">
+          <Loader className="animate-spin w-8 h-8 text-[#0F1E3D]" />
+        </div>
+      ) : displayedProducts.length === 0 ? (
+        <div className="flex flex-col items-center justify-center mt-16 text-[#4A4A4A]">
+          <p className="text-lg font-semibold">No items found</p>
+          <p className="text-sm mt-1">Try adjusting your search or filters</p>
+
+          <div className="mt-4 text-sm">
+            Showing page {currentPage} of {totalPages} — 0 items
+          </div>
+        </div>
+      ) : (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {displayedProducts.map((product) => (
