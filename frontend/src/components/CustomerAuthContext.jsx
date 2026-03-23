@@ -9,10 +9,23 @@ export const AuthContext = createContext();
 // Provider component
 export const AuthProvider = ({ children }) => {
   const [authState, setAuthState] = useState({
+  const token = localStorage.getItem("customerToken");
+  const user = localStorage.getItem("customerUser");
+
+  if (token && user) {
+    return {
+      isLoggedIn: true,
+      user: JSON.parse(user),
+      token,
+    };
+  }
+
+  return {
     isLoggedIn: false,
     user: null,
     token: null,
-  });
+  };
+});
 
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
