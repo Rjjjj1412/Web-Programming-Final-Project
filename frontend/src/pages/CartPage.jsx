@@ -108,6 +108,7 @@ const CartPage = () => {
 
                         <div className="flex items-center gap-3 mb-4">
                           <button
+                            id="decrease-qty-btn"
                             onClick={() =>
                               updateQuantity(
                                 item._id,
@@ -136,6 +137,7 @@ const CartPage = () => {
                           />
 
                           <button
+                            id="increase-qty-btn"
                             onClick={() =>
                               updateQuantity(
                                 item._id,
