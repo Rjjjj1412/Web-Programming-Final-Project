@@ -84,12 +84,12 @@ const ProductsPage = () => {
 
         {/* Success/Error */}
         {successMessage && (
-          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+          <div id="success-message" data-testid="success-message" className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
             <strong className="font-bold">Success!</strong> {successMessage}
           </div>
         )}
         {errorMessage && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          <div id="error-message" data-testid="error-message" className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
             <strong className="font-bold">Error!</strong> {errorMessage}
           </div>
         )}
@@ -98,6 +98,8 @@ const ProductsPage = () => {
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-4xl font-bold text-[#0F1E3D]">Manage Products</h1>
           <button
+            id="create-product-btn"
+            data-testid="create-product-btn"
             onClick={handleCreate}
             className="px-6 py-2 bg-[#4A90E2] text-white rounded-lg hover:bg-[#3A7BC8] transition-colors"
           >
@@ -167,7 +169,7 @@ const ProductsPage = () => {
 
             <tbody className="bg-white divide-y divide-gray-200">
               {paginatedProducts.map((product) => (
-                <tr key={product._id} className="hover:bg-gray-50">
+                <tr key={product._id} id={`product-row-${product._id}`} data-testid={`product-row-${product._id}`} className="hover:bg-gray-50">
                   <td className="px-6 py-4 text-sm font-medium text-gray-900">
                     <div className="flex items-center gap-3">
                       <img
@@ -209,12 +211,16 @@ const ProductsPage = () => {
                   </td>
                   <td className="px-6 py-4 text-right text-sm flex justify-end gap-2">
                     <button
+                      id={`edit-product-btn-${product._id}`}
+                      data-testid={`edit-product-btn-${product._id}`}
                       onClick={() => handleEdit(product)}
                       className="text-[#4A90E2] hover:text-[#3A7BC8] font-semibold"
                     >
                       Edit
                     </button>
                     <button
+                      id={`delete-product-btn-${product._id}`}
+                      data-testid={`delete-product-btn-${product._id}`}
                       onClick={() => handleDeleteRequest(product._id)}
                       className="text-red-600 hover:text-red-800 font-semibold"
                     >
