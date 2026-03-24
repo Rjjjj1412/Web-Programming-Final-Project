@@ -168,6 +168,7 @@ const CartPage = () => {
                         </p>
 
                         <button
+                          data-testid={`remove-item-${item._id}`}
                           onClick={() => removeFromCart(item._id)}
                           className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
                         >
