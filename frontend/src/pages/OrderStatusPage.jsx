@@ -178,6 +178,7 @@ const OrderStatusPage = () => {
     <div className="min-h-full flex flex-col p-8">
       <div className="max-w-7xl mx-auto px-8 py-16">
         <h1
+          data-testid="order-tracking-title"
           className="text-5xl font-extrabold mb-12"
           style={{ color: palette.primary }}
         >
@@ -245,13 +246,13 @@ const OrderStatusPage = () => {
                 </div>
                 <div className="sm:col-span-2">
                   <p
-                    data-testid="shipping-address"
                     className="text-lg mb-2 font-semibold"
                     style={{ color: palette.gray }}
                   >
                     Shipping Address
                   </p>
                   <p
+                    data-testid="shipping-address"
                     className="text-lg font-bold"
                     style={{ color: palette.primary }}
                   >
@@ -274,9 +275,11 @@ const OrderStatusPage = () => {
               </h2>
               <div data-testid="order-items-list" className="space-y-6">
                 {paginatedItems.map((item) => (
-                  <OrderItem key={item._id} item={item} 
-                    data-testid={`order-item-${item._id}`
-                    />
+                  <OrderItem
+                    key={item._id}
+                    item={item}
+                    data-testid={`order-item-${item._id}`}
+                  />
                 ))}
               </div>
               {totalPages > 1 && (
@@ -393,7 +396,7 @@ const OrderStatusPage = () => {
                   style={{ color: palette.primary }}
                 >
                   Current Status:{" "}
-                  <span style={{ color: palette.accent }}>
+                  <span data-testid="order-status-value" style={{ color: palette.accent }}>
                     {order.order_status}
                   </span>
                 </p>
