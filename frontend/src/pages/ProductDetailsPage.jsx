@@ -206,6 +206,7 @@ const ProductDetailsPage = () => {
 
             <div className="flex items-center space-x-4 mb-6">
               <button
+                data-testid="add-to-cart-button"
                 onClick={handleAddToCart}
                 className="flex items-center justify-center bg-[#4A90E2] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#3A7BC8] transition-colors"
               >
