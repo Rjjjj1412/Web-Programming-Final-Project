@@ -124,11 +124,12 @@ const ProductsPage = () => {
         {/* Table */}
         <div
           ref={tableWrapperRef}
+          data-testid="product-table-container"
           className="bg-white shadow-lg rounded-xl overflow-x-auto"
           style={{ maxHeight: "500px" }} // keeps table small for bottom scroll
           onScroll={() => syncScroll(tableWrapperRef, topScrollRef)}
         >
-          <table className="min-w-[1200px] divide-y divide-gray-200 table-fixed">
+          <table data-testid="product-table" className="min-w-[1200px] divide-y divide-gray-200 table-fixed">
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase w-64">
