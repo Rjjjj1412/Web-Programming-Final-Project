@@ -218,7 +218,7 @@ const CartPage = () => {
 
               <div className="flex justify-between mb-6 mt-6">
                 <span
-                  data-testid={`cart-total-${userId}`}
+                  data-testid="cart-total"
                   className="text-lg font-bold"
                   style={{ color: "#1F3B6D" }}
                 >
