@@ -492,6 +492,7 @@ const ProductForm = ({ product, onSuccess, onClose, onError }) => {
           {/* Buttons */}
           <div className="md:col-span-2 flex justify-end space-x-4 pt-4">
             <button
+              data-testid="cancel-button"
               type="button"
               onClick={onClose}
               className="px-6 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200"
@@ -506,6 +507,7 @@ const ProductForm = ({ product, onSuccess, onClose, onError }) => {
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-[#4A90E2]"
               }`}
+              data-testid={product ? "save-product-button" : "create-product-button"}
             >
               {product ? "Save Changes" : "Create Product"}
             </button>
