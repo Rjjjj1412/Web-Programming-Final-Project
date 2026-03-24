@@ -113,6 +113,7 @@ const OrderStatusPage = () => {
         style={{ background: palette.background }}
       >
         <Loader
+          data-testid="loading-spinner"
           className="animate-spin w-16 h-16"
           style={{ color: palette.primary }}
         />
@@ -197,6 +198,7 @@ const OrderStatusPage = () => {
                     Order ID
                   </p>
                   <p
+                    data-testid="order-id"
                     className="text-2xl font-bold"
                     style={{ color: palette.primary }}
                   >
@@ -208,6 +210,7 @@ const OrderStatusPage = () => {
                     Order Date
                   </p>
                   <p
+                    data-testid="order-date"
                     className="text-2xl font-bold"
                     style={{ color: palette.primary }}
                   >
@@ -219,6 +222,7 @@ const OrderStatusPage = () => {
                     Payment Status
                   </p>
                   <p
+                    data-testid="payment-status"
                     className="text-2xl font-bold"
                     style={{
                       color: getPaymentStatusColor(order.payment_status),
@@ -232,6 +236,7 @@ const OrderStatusPage = () => {
                     Total Amount
                   </p>
                   <p
+                    data-testid="total-amount"
                     className="text-2xl font-bold"
                     style={{ color: palette.accent }}
                   >
@@ -240,6 +245,7 @@ const OrderStatusPage = () => {
                 </div>
                 <div className="sm:col-span-2">
                   <p
+                    data-testid="shipping-address"
                     className="text-lg mb-2 font-semibold"
                     style={{ color: palette.gray }}
                   >
@@ -266,9 +272,11 @@ const OrderStatusPage = () => {
               >
                 Order Items
               </h2>
-              <div className="space-y-6">
+              <div data-testid="order-items-list" className="space-y-6">
                 {paginatedItems.map((item) => (
-                  <OrderItem key={item._id} item={item} />
+                  <OrderItem key={item._id} item={item} 
+                    data-testid={`order-item-${item._id}`
+                    />
                 ))}
               </div>
               {totalPages > 1 && (
@@ -304,6 +312,7 @@ const OrderStatusPage = () => {
               >
                 <XCircle size={64} color="#D8000C" />
                 <h2
+                  data-testid="order-cancelled"
                   className="text-3xl font-bold mt-6"
                   style={{ color: "#D8000C" }}
                 >
@@ -379,6 +388,7 @@ const OrderStatusPage = () => {
                   })}
                 </div>
                 <p
+                  data-testid="order-status"
                   className="text-center text-xl font-bold"
                   style={{ color: palette.primary }}
                 >
