@@ -63,6 +63,7 @@ const OrderSummary = ({ items, onPlaceOrder, loading }) => {
       </div>
 
       <button
+        data-testid="place-order"
         onClick={onPlaceOrder}
         disabled={loading}
         className="w-full py-3 text-white rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
