@@ -218,13 +218,14 @@ const CartPage = () => {
 
               <div className="flex justify-between mb-6 mt-6">
                 <span
-                  data-testid="cart-total"
+                  data-testid="cart-total-label"
                   className="text-lg font-bold"
                   style={{ color: "#1F3B6D" }}
                 >
                   Total:
                 </span>
                 <span
+                  data-testid="cart-total-price"
                   className="text-2xl font-bold"
                   style={{ color: "#4A90E2" }}
                 >
