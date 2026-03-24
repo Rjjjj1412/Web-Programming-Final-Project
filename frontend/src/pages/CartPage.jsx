@@ -101,6 +101,7 @@ const CartPage = () => {
                         </p>
 
                         <p
+                          data-testid={`product-price-${item._id}`}
                           className="font-semibold mb-4"
                           style={{ color: "#4A90E2" }}
                         >
@@ -217,6 +218,7 @@ const CartPage = () => {
 
               <div className="flex justify-between mb-6 mt-6">
                 <span
+                  data-testid={`cart-total-${userId}`}
                   className="text-lg font-bold"
                   style={{ color: "#1F3B6D" }}
                 >
@@ -231,6 +233,7 @@ const CartPage = () => {
               </div>
 
               <button
+                data-testid="cart-checkout"
                 onClick={handleProceedCheckout}
                 className="w-full py-3 text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
                 style={{ background: "#4A90E2" }}
@@ -239,6 +242,7 @@ const CartPage = () => {
               </button>
 
               <button
+                data-testid="cont-shop"
                 onClick={() => navigate("/browse")}
                 className="w-full mt-3 py-3 text-white rounded-lg font-semibold border-2 hover:opacity-90 transition-opacity"
                 style={{
