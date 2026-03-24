@@ -193,6 +193,7 @@ const CheckoutPage = () => {
                     Shipping Address (single-line or multi-line string)
                   </label>
                   <textarea
+                    data-testid="shipping-address"
                     value={shippingAddress}
                     onChange={(e) => setShippingAddress(e.target.value)}
                     placeholder="123 Main St, Apt 4B, City, State, ZIP, Country"
@@ -232,6 +233,7 @@ const CheckoutPage = () => {
                   <div className="flex items-center gap-3">
                     <input
                       type="radio"
+                      data-testid="payment-card"
                       name="payment"
                       value="credit_card"
                       checked={paymentMethod === "credit_card"}
@@ -255,6 +257,7 @@ const CheckoutPage = () => {
                   <div className="flex items-center gap-3">
                     <input
                       type="radio"
+                      data-testid="payment-cod"
                       name="payment"
                       value="cod"
                       checked={paymentMethod === "cod"}
