@@ -749,6 +749,7 @@ const BrowseBooksPage = () => {
                     max={Math.max(1, totalPages)}
                   />
                   <button
+                    data-testid="go-button"
                     onClick={() => applyPage(pageInput)}
                     disabled={totalPages <= 1}
                     className={`px-3 py-1 text-white rounded-lg text-sm ${
