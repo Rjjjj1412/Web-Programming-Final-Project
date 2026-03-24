@@ -65,6 +65,7 @@ const CartPage = () => {
                   return (
                     <div
                       key={item._id}
+                      data-testid={`cart-item-${item._id}`}
                       className="flex gap-4 pb-6 mb-6 border-b"
                       style={{ borderColor: "#E0E0E0" }}
                     >
@@ -108,7 +109,7 @@ const CartPage = () => {
 
                         <div className="flex items-center gap-3 mb-4">
                           <button
-                            id="decrease-qty-btn"
+                            data-testid={`decrease-qty-${item._id}`}
                             onClick={() =>
                               updateQuantity(
                                 item._id,
@@ -126,6 +127,7 @@ const CartPage = () => {
                           </button>
 
                           <input
+                            data-testid={`cart-qty-${item._id}`}
                             type="number"
                             min={1}
                             max={stock || 999999}
@@ -137,7 +139,7 @@ const CartPage = () => {
                           />
 
                           <button
-                            id="increase-qty-btn"
+                            data-testid={`increase-qty-${item._id}`}
                             onClick={() =>
                               updateQuantity(
                                 item._id,
