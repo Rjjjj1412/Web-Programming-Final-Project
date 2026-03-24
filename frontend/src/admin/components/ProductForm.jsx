@@ -149,18 +149,20 @@ const ProductForm = ({ product, onSuccess, onClose, onError }) => {
         onClick={onClose}
       ></div>
 
-      <div className="relative bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200 max-h-[90vh] overflow-y-auto">
-        <h2 className="text-2xl font-bold mb-6 text-[#0F1E3D]">
+      <div id="product-form-modal" data-testid="product-form-modal" className="relative bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl border border-gray-200 max-h-[90vh] overflow-y-auto">
+        <h2  id="product-form-title" data-testid="product-form-title" className="text-2xl font-bold mb-6 text-[#0F1E3D]">
           {product ? "Edit Product" : "Create Product"}
         </h2>
 
         {error && (
-          <div className="bg-red-100 text-red-700 p-2 rounded mb-4">
+          <div id="product-form-error" data-testid="product-form-error" className="bg-red-100 text-red-700 p-2 rounded mb-4">
             {error}
           </div>
         )}
 
         <form
+          id="product-form"
+          data-testid="product-form"
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
