@@ -1,6 +1,6 @@
 import React from "react";
 
-const OrderItem = ({ item }) => {
+const OrderItem = ({ item, ...props }) => {
   const palette = {
     primary: "#1F3B6D",
     gray: "#757575",
@@ -16,6 +16,7 @@ const OrderItem = ({ item }) => {
 
   return (
     <div
+      {...props}
       className="flex gap-4 pb-4 border-b"
       style={{ borderColor: "#E0E0E0" }}
     >
