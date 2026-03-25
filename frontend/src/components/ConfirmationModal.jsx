@@ -13,7 +13,7 @@ const ConfirmationModal = ({
 }) => {
   if (!isOpen) {
   return (
-    <div className="hidden"/>
+    <div className="hidden" data-testid="confirmation-modal"/>
   );
 }
 
@@ -24,8 +24,8 @@ const ConfirmationModal = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
-      <div data-testid="confirmation-modal" className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm pointer-events-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none" data-testid="confirmation-modal">
+      <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm pointer-events-auto">
         <div className="flex justify-center mb-4">{icons[iconType]}</div>
 
         <h2 className="text-xl font-bold text-center mb-3 text-[#1F3B6D]"
